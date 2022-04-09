@@ -1,5 +1,23 @@
 query getProducts {
 	products {
 		name
+		category
+		price
+		currency
+		image {
+			src
+			alt
+		}
+		bestseller
+		featured
+		details {
+			weight
+			thickness
+			description
+			recommendations {
+				src
+				alt
+			}
+		}
 	}
 }

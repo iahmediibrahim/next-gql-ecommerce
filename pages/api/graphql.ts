@@ -1,19 +1,8 @@
 import { ApolloServer } from 'apollo-server-micro'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import 'reflect-metadata'
-import { buildSchema, Field, ID, ObjectType, Query, Resolver } from 'type-graphql'
-@ObjectType()
-export class Product {
-	@Field(() => ID)
-	name: string | undefined
-}
-@Resolver(Product)
-export class ProductsResolver {
-	@Query(() => [Product])
-	products(): Product[] {
-		return [{ name: 'test' }, { name: 'test 2' }]
-	}
-}
+import { buildSchema } from 'type-graphql'
+import { ProductsResolver } from '../../src/schema/products.resolver'
 const schema = await buildSchema({
 	resolvers: [ProductsResolver],
 })

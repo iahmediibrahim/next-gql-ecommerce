@@ -1,0 +1,62 @@
+[
+	{
+		"name": "Shape",
+		"category": "steel",
+		"price": 93.89,
+		"currency": "USD",
+		"image": "",
+		"bestseller": false,
+		"featured": false,
+		"details": null
+	},
+	{
+		"name": "Wave",
+		"category": "steel",
+		"price": 120.21,
+		"currency": "USD",
+		"image": {
+			"src": "",
+			"alt": ""
+		},
+		"bestseller": false,
+		"featured": false,
+		"details": null
+	},
+	{
+		"name": "Shape",
+		"category": "steel",
+		"price": 101,
+		"currency": "USD",
+		"image": "",
+		"bestseller": false,
+		"featured": false,
+		"details": null
+	},
+	{
+		"name": "Recycled Plastic",
+		"category": "plastic",
+		"price": 101,
+		"currency": "USD",
+		"image": {
+			"src": "",
+			"alt": ""
+		},
+		"bestseller": false,
+		"featured": true,
+		"details": {
+			"weight": 2340,
+			"thickness": 2,
+			"description": "",
+			"recommendations": [
+				{
+					"src": "",
+					"alt": ""
+				},
+				{
+					"src": "",
+					"alt": ""
+				}
+			]
+		}
+	}
+]
