@@ -35,5 +35,5 @@ export class Product {
 	@Field(() => Boolean)
 	featured!: boolean
 	@Field(() => ProductDetails, { nullable: true })
-	details?: ProductDetails
+	details?: ProductDetails | null
 }
