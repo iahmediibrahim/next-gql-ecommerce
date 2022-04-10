@@ -1,13 +1,14 @@
+import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { dehydrate, useQuery } from 'react-query'
 import { useCart } from 'react-use-cart'
 import { productByName, queryClient } from '../../src/api'
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params }: any) {
 	await queryClient.prefetchQuery('product', () => productByName({ name: params.name }))
 	return {
 		props: {
-			name: params.name,
+			name: name,
 			dehydratedState: dehydrate(queryClient),
 		},
 	}
@@ -31,11 +32,12 @@ const Product: React.FunctionComponent<{ name: string }> = ({ name }) => {
 					<div className='flex flex-col md:flex-row -mx-4'>
 						<div className='md:flex-1 px-4'>
 							<div className='w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none'>
-								{/* eslint-disable-next-line */}
-								<img
-									src={product.image.src}
-									alt={product.image.alt}
+								<Image
+									src={product.image.src as string}
+									alt={product.image.alt as string}
 									className='w-full h-full object-center object-cover lg:w-full lg:h-full'
+									height={'600'}
+									width={'1080'}
 								/>
 							</div>
 						</div>

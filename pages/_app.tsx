@@ -20,11 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<QueryClientProvider client={queryClient}>
 			<Hydrate state={pageProps.dehydratedState}>
-				<CartProvider
-					id='cart'
-					onItemAdd={(item) => console.log(`Item ${item.id} added!`)}
-					onItemUpdate={(item) => console.log(`Item ${item.id} updated.!`)}
-					onItemRemove={() => console.log(`Item removed!`)}>
+				<CartProvider id='cart'>
 					<Layout>
 						<Component {...pageProps} />
 					</Layout>

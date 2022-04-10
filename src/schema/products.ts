@@ -2,10 +2,10 @@ import { Field, ID, ObjectType } from 'type-graphql'
 @ObjectType()
 export class ProductImage {
 	@Field(() => String, { nullable: true })
-	src?: string
+	src?: string | null | undefined
 
 	@Field(() => String, { nullable: true })
-	alt?: string
+	alt?: string | null | undefined
 }
 @ObjectType()
 export class ProductDetails {
@@ -31,7 +31,7 @@ export class Product {
 	@Field(() => String)
 	currency!: string
 	@Field(() => ProductImage)
-	image!: ProductImage
+	image!: ProductImage | null
 	@Field(() => Boolean)
 	bestseller!: boolean
 	@Field(() => Boolean)

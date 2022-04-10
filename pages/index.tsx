@@ -22,11 +22,9 @@ const Home: NextPage = () => {
 	useEffect(() => {
 		setIsSSR(false)
 	}, [])
-	const {
-		error,
-		data: { products },
-	} = useQuery('products', () => getProducts())
-
+	const { error, data } = useQuery('products', () => getProducts())
+	if (!data?.products) return <div className='p-6'>No product with this name.</div>
+	const { products } = data
 	return (
 		<div className='max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8'>
 			<h2 className='text-2xl font-extrabold tracking-tight text-gray-900'>Products</h2>
@@ -40,8 +38,8 @@ const Home: NextPage = () => {
 							<Link href={`/product/${product.name}`} passHref>
 								<div className='w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none'>
 									<Image
-										src={product.image.src}
-										alt={product.image.alt}
+										src={product?.image?.src as string}
+										alt={product?.image?.alt as string}
 										className='w-full h-full object-center object-cover lg:w-full lg:h-full'
 										height={'1920'}
 										width={'1080'}
