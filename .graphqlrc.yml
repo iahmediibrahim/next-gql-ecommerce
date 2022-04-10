@@ -1,2 +1,2 @@
-schema: 'http://localhost:3000/api/graphql'
+schema: 'https://next-gql-ecommerce.vercel.app/api/graphql'
 documents: 'src/**/*.{graphql,js,ts,jsx,tsx}'
