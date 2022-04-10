@@ -8,7 +8,7 @@ export async function getServerSideProps({ params }: any) {
 	await queryClient.prefetchQuery('product', () => productByName({ name: params.name }))
 	return {
 		props: {
-			name: name,
+			name: params.name,
 			dehydratedState: dehydrate(queryClient),
 		},
 	}

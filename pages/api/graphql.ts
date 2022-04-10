@@ -6,7 +6,10 @@ import { ProductsResolver } from '../../src/schema/products.resolver'
 const schema = await buildSchema({
 	resolvers: [ProductsResolver],
 })
-const server = new ApolloServer({ schema })
+const server = new ApolloServer({
+	schema,
+	introspection: true,
+})
 export const config = {
 	api: {
 		bodyParser: false,
