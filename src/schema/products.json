@@ -1,60 +1,84 @@
 [
 	{
+		"id": "1",
 		"name": "Shape",
 		"category": "steel",
 		"price": 93.89,
 		"currency": "USD",
-		"image": "",
-		"bestseller": false,
-		"featured": false,
-		"details": null
-	},
-	{
-		"name": "Wave",
-		"category": "steel",
-		"price": 120.21,
-		"currency": "USD",
 		"image": {
-			"src": "",
-			"alt": ""
+			"src": "https://images.unsplash.com/photo-1592438944517-ee7d4fd058c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNzY2ODF8MHwxfHNlYXJjaHw1fHxzdGVlbHxlbnwwfHx8fDE2NDk1NDk4NzU&ixlib=rb-1.2.1&q=80&w=1080",
+			"alt": "steel shape"
 		},
 		"bestseller": false,
 		"featured": false,
 		"details": null
 	},
 	{
-		"name": "Shape",
+		"id": "2",
+		"name": "Wave",
 		"category": "steel",
-		"price": 101,
+		"price": 120.21,
 		"currency": "USD",
-		"image": "",
+		"image": {
+			"src": "https://images.unsplash.com/photo-1611110321197-3b43447c00e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNzY2ODF8MHwxfHNlYXJjaHw0fHxzdGVlbHxlbnwwfHx8fDE2NDk1NDk4NzU&ixlib=rb-1.2.1&q=80&w=1080",
+			"alt": "steel wave"
+		},
 		"bestseller": false,
 		"featured": false,
 		"details": null
 	},
 	{
-		"name": "Recycled Plastic",
-		"category": "plastic",
+		"id": "3",
+		"name": "Red",
+		"category": "brick",
 		"price": 101,
 		"currency": "USD",
 		"image": {
-			"src": "",
-			"alt": ""
+			"src": "https://images.unsplash.com/photo-1518084863640-b5c977f67587?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNzY2ODF8MHwxfHNlYXJjaHwzNnx8R2xhc3N8ZW58MHx8fHwxNjQ5NTUwMjc0&ixlib=rb-1.2.1&q=80&w=1080",
+			"alt": "Brick wall"
+		},
+		"bestseller": false,
+		"featured": false,
+		"details": null
+	},
+	{
+		"id": "4",
+		"name": "Pastel",
+		"category": "brick",
+		"price": 101,
+		"currency": "USD",
+		"image": {
+			"src": "https://images.unsplash.com/photo-1519758437711-f9ae52e78a95?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNzY2ODF8MHwxfHNlYXJjaHwyMnx8YnJpY2slMjBwYXN0ZWx8ZW58MHx8fHwxNjQ5NTUwMzcz&ixlib=rb-1.2.1&q=80&w=1080",
+			"alt": "Brick wall"
+		},
+		"bestseller": false,
+		"featured": false,
+		"details": null
+	},
+	{
+		"id": "5",
+		"name": "Reinforced",
+		"category": "glass",
+		"price": 101,
+		"currency": "USD",
+		"image": {
+			"src": "https://images.unsplash.com/photo-1515544441366-a720e2198ac4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNzY2ODF8MHwxfHNlYXJjaHwyMHx8R2xhc3MlMjBSZWluZm9yY2VkfGVufDB8fHx8MTY0OTU1MDExMQ&ixlib=rb-1.2.1&q=80&w=1080",
+			"alt": "Glass Reinforced"
 		},
 		"bestseller": false,
 		"featured": true,
 		"details": {
 			"weight": 2340,
 			"thickness": 2,
-			"description": "",
+			"description": "Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Vitae exercitationem porro saepe ea harum corrupti vero id laudantium enim, libero blanditiis expedita cupiditate a est.",
 			"recommendations": [
 				{
-					"src": "",
-					"alt": ""
+					"src": "https://images.unsplash.com/photo-1592438944517-ee7d4fd058c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNzY2ODF8MHwxfHNlYXJjaHw1fHxzdGVlbHxlbnwwfHx8fDE2NDk1NDk4NzU&ixlib=rb-1.2.1&q=80&w=1080",
+					"alt": "steel shape"
 				},
 				{
-					"src": "",
-					"alt": ""
+					"src": "https://images.unsplash.com/photo-1611110321197-3b43447c00e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNzY2ODF8MHwxfHNlYXJjaHw0fHxzdGVlbHxlbnwwfHx8fDE2NDk1NDk4NzU&ixlib=rb-1.2.1&q=80&w=1080",
+					"alt": "steel wave"
 				}
 			]
 		}

@@ -21,6 +21,8 @@ export class ProductDetails {
 @ObjectType()
 export class Product {
 	@Field(() => ID)
+	id!: string
+	@Field(() => String)
 	name!: string
 	@Field(() => String)
 	category!: string
@@ -28,8 +30,8 @@ export class Product {
 	price!: number
 	@Field(() => String)
 	currency!: string
-	@Field(() => ProductImage || String)
-	image!: ProductImage | string
+	@Field(() => ProductImage)
+	image!: ProductImage
 	@Field(() => Boolean)
 	bestseller!: boolean
 	@Field(() => Boolean)
