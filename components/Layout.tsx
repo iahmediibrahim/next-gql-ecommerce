@@ -34,8 +34,8 @@ const Layout: React.FunctionComponent<{ children: React.ReactNode }> = ({ childr
 							</svg>
 						</button>
 
-						<Link href='/' className='font-bold text-gray-700 text-2xl'>
-							Shop.
+						<Link href='/'>
+							<a className='font-bold text-gray-700 text-2xl'>Shop.</a>
 						</Link>
 						<div className='hidden md:flex space-x-3 flex-1 lg:ml-8'>
 							<a
@@ -71,45 +71,52 @@ const Layout: React.FunctionComponent<{ children: React.ReactNode }> = ({ childr
 									<div className='relative bg-white p-2'>
 										{isEmpty && <p>Your cart is empty</p>}
 										<h1 className='text-gray-500 mb-2'>Total - {!isSSR && cartTotal}$</h1>
-										{items.map((item) => (
-											<div key={item.id} className='grid grid-cols-2 gap-2 mb-4'>
-												<Image
-													src={item.image.src}
-													alt={item.image.alt}
-													height={'120'}
-													width={'120'}
-													layout='responsive'
-													className='rounded-lg'
-												/>
-												<div>
-													<h3 className='text-gray-900 mb-2'>
-														{item.quantity} x {item.name}
-													</h3>
-													<div className='flex items-center justify-between'>
+										{items.map((item) => {
+											const quantity = item?.quantity
+											return (
+												<div key={item.id} className='grid grid-cols-2 gap-2 mb-4'>
+													<Image
+														src={item.image.src}
+														alt={item.image.alt}
+														height={'120'}
+														width={'120'}
+														layout='responsive'
+														className='rounded-lg'
+													/>
+													<div>
+														<h3 className='text-gray-900 mb-2'>
+															{quantity} x {item.name}
+														</h3>
+														<div className='flex items-center justify-between'>
+															{quantity && (
+																<button
+																	className='h-8 mt-2 px-4 font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white'
+																	onClick={() =>
+																		updateItemQuantity(item.id, quantity - 1)
+																	}>
+																	-
+																</button>
+															)}
+															{quantity && (
+																<button
+																	className='h-8 mt-2 px-4 font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white'
+																	onClick={() =>
+																		updateItemQuantity(item.id, quantity + 1)
+																	}>
+																	+
+																</button>
+															)}
+														</div>
+
 														<button
-															className='h-8 mt-2 px-4 font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white'
-															onClick={() =>
-																updateItemQuantity(item.id, item?.quantity - 1)
-															}>
-															-
-														</button>
-														<button
-															className='h-8 mt-2 px-4 font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white'
-															onClick={() =>
-																updateItemQuantity(item.id, item?.quantity + 1)
-															}>
-															+
+															className='h-8 min-w-full mt-2 px-4 font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white'
+															onClick={() => removeItem(item.id)}>
+															Remove &times;
 														</button>
 													</div>
-
-													<button
-														className='h-8 min-w-full mt-2 px-4 font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white'
-														onClick={() => removeItem(item.id)}>
-														Remove &times;
-													</button>
 												</div>
-											</div>
-										))}
+											)
+										})}
 
 										<div className='opacity-75'>
 											{!isEmpty && (
